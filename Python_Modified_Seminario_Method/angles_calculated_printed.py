@@ -107,9 +107,8 @@ def angles_calculated_printed( outputfilefolder, vibrational_scaling_squared, an
         #Vibrational_scaling takes into account DFT deficities/ anharmocity 
         k_theta[i] =  k_theta[i] * vibrational_scaling_squared
         
-        fid.write(str(i))
-        fid.write( '  ' + atom_names[angle_list[i][0]] + '-' + atom_names[angle_list[i][1] ] + '-' + atom_names[angle_list[i][2]] + '  ' )
-        fid.write(str("%.3f" % k_theta[i]) + '   ' + str("%.3f" % theta_0[i]) + '   ' + str(angle_list[i][0] + 1)  + '   ' + str(angle_list[i][1] + 1) + '   ' + str(angle_list[i][2] + 1))
+        fid.write( atom_names[angle_list[i][0]] + '-' + atom_names[angle_list[i][1] ] + '-' + atom_names[angle_list[i][2]] + '  ' )
+        fid.write(str("%#.4g" % k_theta[i]) + '   ' + str("%#.4g" % theta_0[i]) + '   ' + str(angle_list[i][0] + 1)  + '   ' + str(angle_list[i][1] + 1) + '   ' + str(angle_list[i][2] + 1))
         fid.write('\n')
 
         unique_values_angles.append([atom_names[angle_list[i][0]], atom_names[angle_list[i][1]], atom_names[angle_list[i][2]], k_theta[i], theta_0[i], 1 ])

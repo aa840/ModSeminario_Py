@@ -24,7 +24,7 @@ def bonds_calculated_printed(outputfilefolder, vibrational_scaling_squared, bond
 
         bond_length_list[i] =  bond_lengths[bond_list[i][0]][bond_list[i][1]]
         fid.write(atom_names[bond_list[i][0]] + '-' + atom_names[bond_list[i][1]] + '  ')
-        fid.write(str("%.3f" % k_b[i])+ '   ' + str("%.3f" % bond_length_list[i]) +  '   ' +
+        fid.write(str("%#.5g" % k_b[i])+ '   ' + str("%#.4g" % bond_length_list[i]) +  '   ' +
                   str(bond_list[i][0] + 1) +  '   ' + str(bond_list[i][1] + 1))
         fid.write('\n')
 
